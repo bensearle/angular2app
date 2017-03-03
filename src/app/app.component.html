@@ -1,14 +1,8 @@
-<h1>
-  {{title}}
-</h1>
-<app-other></app-other>
-<app-another>
-  <div>
-    <h2>hello</h2>
-    <p>world</p>
-  </div>
-</app-another>
-<app-another>
-  <p>something else</p>
-</app-another>
+<h1>{{title}}</h1>
+<app-lifecycle *ngIf="!delete" [bindable]="boundValue">
+  <p #boundContent>{{test}}</p>
+</app-lifecycle>
+<button (click)="delete = true">Click to Delete</button>
+<button (click)="test = 'Changed Value'">Click to Change Content</button>
+<button (click)="boundValue = 2000">Click to Change Binding </button>
 <app-databinding></app-databinding>
