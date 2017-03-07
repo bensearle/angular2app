@@ -1,0 +1,7 @@
+<h1>Attribute Directives</h1>
+<h2>ngClass / ngStyle</h2>
+<div [ngClass]="{border: true, background: true}"></div>
+<div [class.border]="true"></div>
+<div [ngStyle]="{'border': '3px solid red'}"></div>
+<h2>Custom Attribute Directive</h2>
+<div [dirHighlight]="'blue'" [defaultColor]="'red'">Some Text</div>
