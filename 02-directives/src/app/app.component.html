@@ -5,3 +5,37 @@
 <div [ngStyle]="{'border': '3px solid red'}"></div>
 <h2>Custom Attribute Directive</h2>
 <div [dirHighlight]="'blue'" [defaultColor]="'red'">Some Text</div>
+<hr>
+<h1>Structural Directives</h1>
+<h2>*ngIf</h2>
+<div *ngIf="switch">Conditional Text 1</div> <!-- beautified version of div below -->
+<template [ngIf]="switch"> <!-- Angular is turning the above div into this template -->
+  <div>Conditional Text 2</div>
+</template>
+<button (click)="onSwitch()">Switch</button>
+<hr>
+<h2>*ngFor</h2>
+<ul>
+  <li *ngFor="let item of items; let i = index">{{item}} - (Index: {{i}})</li>
+</ul>
+<hr>
+<h2>ngSwitch</h2> <!-- both examples do the same thing -->
+<div [ngSwitch]="value">
+  <p *ngSwitchCase="10">10</p>
+  <p *ngSwitchCase="100">100</p>
+  <p *ngSwitchDefault>Default</p>
+</div>
+<div [ngSwitch]="value">
+  <template [ngSwitchCase]="10">
+    <p>10</p>
+  </template>
+  <template [ngSwitchCase]="100">
+    <p>100</p>
+  </template>
+  <template ngSwitchDefault>
+    <p>Default</p>
+  </template>
+</div>
+<hr>
+<h2>Unless Directive</h2>
+<div *dirUnless="switch">Conditional Text</div>
