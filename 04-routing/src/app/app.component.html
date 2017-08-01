@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row">
+        <div class="col-xs-10">
+            <h1>Hello World!</h1>
+            <div routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+                <a [routerLink]="['']" [queryParams]="{analytics: 500}" [fragment]="'section1'">Home</a> | 
+            </div>
+            <input type="text" #id (input)="0">
+            <a [routerLink]="['user']" routerLinkActive="active">User</a>
+            <a [routerLink]="['user', id.value]">User with Id</a>
+            <a [routerLink]="['user', id.value]" [preserveQueryParams]="true" [preserveFragment]="true">User with Id, preserving queryParams and fragment</a>
+            <hr>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
